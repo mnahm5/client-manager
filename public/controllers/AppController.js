@@ -10,5 +10,12 @@ myApp.controller('AppController', [
         console.log(response);
         $scope.clients = response.data;
     });
-}]);
 
+    $scope.addClient = function () {
+        console.log('Adding new client....');
+        $http.post('/clients', $scope.client).then(function (response) {
+            console.log('Client Added');
+            window.location.href = '/';
+        });
+    }
+}]);

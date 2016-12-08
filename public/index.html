@@ -38,19 +38,19 @@
             <tbody>
                 <tr>
                     <td>
-                        <input type="text" class="form-control" name="first_name">
+                        <input type="text" class="form-control" ng-model="client.first_name" name="first_name">
                     </td>
                     <td>
-                        <input type="text" class="form-control" name="last_name">
+                        <input type="text" class="form-control" ng-model="client.last_name" name="last_name">
                     </td>
                     <td>
-                        <input type="text" class="form-control" name="email">
+                        <input type="text" class="form-control" ng-model="client.email" name="email">
                     </td>
                     <td>
-                        <input type="text" class="form-control" name="phone">
+                        <input type="text" class="form-control" ng-model="client.phone" name="phone">
                     </td>
                     <td>
-                        <button id="addBtn" class="btn btn-primary">Add</button>
+                        <button id="addBtn" class="btn btn-primary" ng-click="addClient()">Add</button>
                     </td>
                 </tr>
                 <tr ng-repeat="client in clients">

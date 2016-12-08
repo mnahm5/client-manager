@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.get('/clients', function (req, res) {
     console.log('Request for clients received....');
 
-    db.clients.find(function(err, docs){
+    db.clients.find().sort({first_name: 1}, function(err, docs){
         if (err) {
             res.send(err);
         }
@@ -19,7 +19,19 @@ app.get('/clients', function (req, res) {
             console.log('Sending Data....');
             res.json(docs);
         }
-    })
+    });
+});
+
+app.post('/clients', function (req, res) {
+    db.clients.insert(req.body, function (err, doc) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            console.log('Client Added');
+            res.json(doc);
+        }
+    });
 });
 
 app.listen(3000);
