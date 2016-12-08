@@ -1,0 +1,15 @@
+{
+  "name": "client-manager",
+  "version": "0.0.1",
+  "description": "Client management system",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongojs": "*"
+  },
+  "author": "Md Nadim Ahmed",
+  "license": "MIT 2016"
+}
