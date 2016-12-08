@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Client Manager</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
+<body ng-controller="AppController">
     <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
@@ -53,11 +53,11 @@
                         <button id="addBtn" class="btn btn-primary">Add</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@gmail.com</td>
-                    <td>123456</td>
+                <tr ng-repeat="client in clients">
+                    <td>{{client.first_name}}</td>
+                    <td>{{client.last_name}}</td>
+                    <td>{{client.email}}</td>
+                    <td>{{client.phone}}</td>
                     <td>
                         <button class="btn btn-warning">Edit</button>
                         <button class="btn btn-danger">Delete</button>
@@ -70,5 +70,6 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/controllers/AppController.js"></script>
 </body>
 </html>
