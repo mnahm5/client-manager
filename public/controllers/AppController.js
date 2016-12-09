@@ -17,5 +17,26 @@ myApp.controller('AppController', [
             console.log('Client Added');
             window.location.href = '/';
         });
+    };
+
+    $scope.editClient = function (id) {
+        $('#addBtn').remove();
+        $http.get('/clients/' + id).then(function (response) {
+            $scope.client = response.data;
+        });
+    };
+
+    $scope.updateClient = function () {
+        $http.put('/clients/' + $scope.client._id, $scope.client).then(function (response) {
+            console.log('Client Updated');
+            window.location.href = '/';
+        });
+    };
+    
+    $scope.deleteClient = function (id) {
+        $http.delete('/clients/' + id).then(function (response) {
+            console.log('Client Removed');
+            window.location.href = '/';
+        })
     }
 }]);

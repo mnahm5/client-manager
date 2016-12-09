@@ -51,6 +51,7 @@
                     </td>
                     <td>
                         <button id="addBtn" class="btn btn-primary" ng-click="addClient()">Add</button>
+                        <button id="updateBtn" class="btn btn-info" ng-click="updateClient()">Update</button>
                     </td>
                 </tr>
                 <tr ng-repeat="client in clients">
@@ -59,8 +60,8 @@
                     <td>{{client.email}}</td>
                     <td>{{client.phone}}</td>
                     <td>
-                        <button class="btn btn-warning">Edit</button>
-                        <button class="btn btn-danger">Delete</button>
+                        <button ng-click="editClient(client._id)" class="btn btn-warning">Edit</button>
+                        <button ng-click="deleteClient(client._id)" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             </tbody>
